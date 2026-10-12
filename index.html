@@ -1,0 +1,1677 @@
+<!doctype html>
+<!-- ============================================================
+  Fazl Daru Pharmaceutical Holding — Home
+  Default language: Persian (fa, RTL). English is applied by i18n.js.
+  PLACEHOLDER NOTES are marked with "PLACEHOLDER:" comments.
+============================================================ -->
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>شرکت داروسازی دانش‌بنیان فضل دارو | هربریس</title>
+    <meta
+      name="description"
+      content="شرکت داروسازی دانش‌بنیان فضل دارو، تولیدکننده داروهای باکیفیت با بیش از ۸ سال سابقه؛ تأسیس ۱۳۹۷ تحت برند هربریس. ترکیب علم و طبیعت در خدمت سلامت جامعه."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fazl Daru" />
+    <meta property="og:title" content="شرکت داروسازی دانش‌بنیان فضل دارو" />
+    <meta
+      property="og:description"
+      content="تولیدکننده داروهای باکیفیت با بیش از ۸ سال سابقه در خدمت سلامت جامعه."
+    />
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:image" content="assets/img/logo.svg" />
+    <!-- Favicon placeholder — swap the file contents to replace -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+
+    <!-- Apply persisted language before first paint (prevents layout flash) -->
+    <script>
+      try {
+        if (localStorage.getItem("fd-lang") === "en") {
+          document.documentElement.lang = "en";
+          document.documentElement.dir = "ltr";
+        }
+      } catch (e) {}
+    </script>
+
+    <!-- Fonts: Vazirmatn (fa) + Inter (en) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Play CDN + brand tokens -->
+    <link rel="stylesheet" href="assets/css/output.css" />
+  </head>
+
+  <body class="bg-white font-sans text-brand-900 antialiased" data-page="index">
+    <a class="fd-skip" href="#main" data-i18n="a11y.skip">پرش به محتوای اصلی</a>
+
+    <!-- ===== Brand mark sprite (swap the symbol's paths to replace the logo) ===== -->
+    <svg aria-hidden="true" focusable="false" style="display: none">
+      <symbol id="fd-mark" viewBox="0 0 48 48">
+        <path
+          d="M24 3.2 41.2 14v20L24 44.8 6.8 34V14L24 3.2Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M19 34.6V14.6"
+          stroke="currentColor"
+          stroke-width="2.6"
+          stroke-linecap="round"
+        />
+        <path
+          d="M19 14.6h7.2M19 23.4h5.6"
+          stroke="currentColor"
+          stroke-width="2.6"
+          stroke-linecap="round"
+        />
+        <!-- leaf breaking out of the molecule frame: science meets nature -->
+        <path
+          d="M28 16.5C29 11.5 33 8 38 8.5c.5 5-3.5 9-9 9.5-.4-.6-.8-1-1-1.5Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M30.8 15.4c1.8-2.3 3.8-4.2 5.8-5.8"
+          stroke="currentColor"
+          stroke-width="1.3"
+          stroke-linecap="round"
+          opacity=".7"
+        />
+        <path
+          d="M13.5 35.2h19.4"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          opacity=".45"
+        />
+        <circle
+          cx="11.6"
+          cy="35.2"
+          r="1.9"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+        />
+        <circle cx="36.8" cy="35.2" r="2.3" fill="#14B8A6" />
+      </symbol>
+    </svg>
+
+    <!-- Scroll progress -->
+    <div id="fd-progress" aria-hidden="true"></div>
+
+    <!-- ===== Header (identical across pages) ===== -->
+    <header id="fd-header" class="fixed inset-x-0 top-0 z-40">
+      <div class="fd-nav">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between lg:h-20">
+            <a
+              href="index.html"
+              class="flex items-center gap-3"
+              data-i18n-aria="brand.logoAria"
+              aria-label="فضل دارو — صفحه اصلی"
+            >
+              <svg
+                class="h-9 w-9 text-brand-700 lg:h-10 lg:w-10"
+                aria-hidden="true"
+              >
+                <use href="#fd-mark"></use>
+              </svg>
+              <span class="flex flex-col leading-tight">
+                <span
+                  class="text-[17px] font-extrabold text-brand-900 lg:text-lg"
+                  data-i18n="brand.name"
+                  >فضل دارو</span
+                >
+                <span
+                  class="hidden text-[10px] font-medium uppercase tracking-[0.22em] text-brand-500 sm:block"
+                  data-i18n="brand.tag"
+                  >هلدینگ داروسازی</span
+                >
+              </span>
+            </a>
+            <nav
+              class="hidden items-center gap-1 lg:flex"
+              data-i18n-aria="nav.aria"
+              aria-label="منوی اصلی"
+            >
+              <a
+                href="index.html"
+                class="fd-nav-link is-active"
+                aria-current="page"
+                data-i18n="nav.home"
+                >خانه</a
+              >
+              <a
+                href="projects.html"
+                class="fd-nav-link"
+                data-i18n="nav.projects"
+                >پروژه‌ها</a
+              >
+              <a href="about.html" class="fd-nav-link" data-i18n="nav.about"
+                >درباره ما</a
+              >
+              <a href="contact.html" class="fd-nav-link" data-i18n="nav.contact"
+                >تماس با ما</a
+              >
+            </nav>
+            <div class="flex items-center gap-2 sm:gap-3">
+              <button
+                type="button"
+                class="fd-lang-btn fd-btn-lang"
+                data-i18n-aria="a11y.langAria"
+                aria-label="تغییر زبان به انگلیسی"
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                id="fd-burger"
+                class="fd-burger lg:hidden"
+                aria-expanded="false"
+                aria-controls="fd-menu"
+                data-i18n-aria="a11y.openMenu"
+                aria-label="باز کردن منو"
+              >
+                <span></span><span></span><span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Mobile full-screen menu ===== -->
+    <div
+      id="fd-menu"
+      class="fd-menu"
+      role="dialog"
+      aria-modal="true"
+      data-i18n-aria="menu.aria"
+      aria-label="منوی موبایل"
+    >
+      <div class="fd-menu-bg" data-menu-close></div>
+      <div class="fd-menu-panel relative flex h-full flex-col bg-white">
+        <div class="flex h-16 shrink-0 items-center justify-between px-5">
+          <span class="flex items-center gap-2.5">
+            <svg class="h-9 w-9 text-brand-700" aria-hidden="true">
+              <use href="#fd-mark"></use>
+            </svg>
+            <span class="font-extrabold text-brand-900" data-i18n="brand.name"
+              >فضل دارو</span
+            >
+          </span>
+          <button
+            type="button"
+            class="fd-menu-close"
+            data-menu-close
+            data-i18n-aria="a11y.closeMenu"
+            aria-label="بستن منو"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav
+          class="flex-1 overflow-y-auto px-6 pt-8"
+          data-i18n-aria="nav.aria"
+          aria-label="منوی اصلی"
+        >
+          <ul role="list" class="space-y-1">
+            <li>
+              <a class="fd-menu-link" href="index.html"
+                ><span class="fd-menu-idx"
+                  ><span class="only-fa">۰۱</span
+                  ><span class="only-en">01</span></span
+                ><span data-i18n="nav.home">خانه</span
+                ><svg
+                  class="fd-flip ms-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" /></svg
+              ></a>
+            </li>
+            <li>
+              <a class="fd-menu-link" href="projects.html"
+                ><span class="fd-menu-idx"
+                  ><span class="only-fa">۰۲</span
+                  ><span class="only-en">02</span></span
+                ><span data-i18n="nav.projects">پروژه‌ها</span
+                ><svg
+                  class="fd-flip ms-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" /></svg
+              ></a>
+            </li>
+            <li>
+              <a class="fd-menu-link" href="about.html"
+                ><span class="fd-menu-idx"
+                  ><span class="only-fa">۰۳</span
+                  ><span class="only-en">03</span></span
+                ><span data-i18n="nav.about">درباره ما</span
+                ><svg
+                  class="fd-flip ms-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" /></svg
+              ></a>
+            </li>
+            <li>
+              <a class="fd-menu-link" href="contact.html"
+                ><span class="fd-menu-idx"
+                  ><span class="only-fa">۰۴</span
+                  ><span class="only-en">04</span></span
+                ><span data-i18n="nav.contact">تماس با ما</span
+                ><svg
+                  class="fd-flip ms-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" /></svg
+              ></a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="fd-menu-foot shrink-0 space-y-3 border-t border-brand-100 p-5"
+        >
+          <div class="flex gap-3">
+            <a href="tel:+985142234242" class="fd-btn fd-btn-outline flex-1"
+              ><svg
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                /></svg
+              ><span data-i18n="menu.call">تماس تلفنی</span></a
+            >
+            <a
+              href="mailto:info@phazldaru.ir"
+              class="fd-btn fd-btn-outline flex-1"
+              ><svg
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="3" />
+                <path d="m3 6 9 7 9-7" /></svg
+              ><span data-i18n="menu.email">ارسال ایمیل</span></a
+            >
+          </div>
+          <div
+            class="flex items-center justify-between rounded-2xl bg-surface px-4 py-2.5"
+          >
+            <span
+              class="text-xs font-semibold text-slate-500"
+              data-i18n="menu.langLabel"
+              >تغییر زبان</span
+            >
+            <button
+              type="button"
+              class="fd-lang-btn fd-btn fd-btn-outline fd-btn-sm"
+            >
+              EN
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main id="main">
+      <!-- ================= HERO ================= -->
+      <section
+        class="fd-hero relative flex min-h-[100svh] flex-col overflow-hidden"
+      >
+        <!-- Three.js DNA-helix particle scene (side on desktop, backdrop on mobile) -->
+        <canvas
+          id="fd-hero-canvas"
+          data-fd-hero3d
+          data-hexagons="1"
+          class="pointer-events-none absolute inset-0 h-full w-full opacity-50 lg:opacity-100"
+          aria-hidden="true"
+        ></canvas>
+
+        <div
+          class="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-10 pt-24 sm:px-6 lg:px-8 lg:pt-28"
+        >
+          <div class="max-w-2xl" data-hero-fade>
+            <p
+              class="fd-hero-badge inline-flex items-center gap-2.5 rounded-full border border-brand-100 bg-white/70 px-4 py-1.5 text-sm font-semibold text-brand-700 backdrop-blur"
+            >
+              <span class="relative flex h-2 w-2" aria-hidden="true"
+                ><span
+                  class="fd-pulse-dot absolute inline-flex h-full w-full rounded-full bg-mint"
+                ></span
+                ><span
+                  class="relative inline-flex h-2 w-2 rounded-full bg-mint-dark"
+                ></span
+              ></span>
+              <span data-i18n="hero.badge">داروسازی دانش‌بنیان</span>
+            </p>
+
+            <h1 class="fd-display mt-6 text-brand-900">
+              <span class="fd-line"
+                ><span class="fd-line-inner" data-i18n="hero.h1a"
+                  >فضل دارو؛</span
+                ></span
+              >
+              <span class="fd-line"
+                ><span class="fd-line-inner" data-i18n="hero.h1b"
+                  >تولیدکننده داروهای باکیفیت</span
+                ></span
+              >
+              <span class="fd-line"
+                ><span class="fd-line-inner" data-i18n="hero.h1c"
+                  >با بیش از ۸ سال سابقه</span
+                ></span
+              >
+              <span class="fd-line"
+                ><span class="fd-line-inner"
+                  ><span class="fd-swash"
+                    ><span data-i18n="hero.h1d">در خدمت سلامت جامعه</span
+                    ><svg
+                      viewBox="0 0 100 10"
+                      preserveAspectRatio="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        pathLength="100"
+                        d="M2 7C25 2.5 60 2.5 98 6"
+                      /></svg></span></span
+              ></span>
+            </h1>
+
+            <p
+              class="fd-hero-sub fd-lead mt-6 max-w-xl text-slate-500"
+              data-i18n="hero.sub"
+            >
+              شرکت داروسازی دانش‌بنیان فضل دارو در سال ۱۳۹۷ (۲۰۱۸) تحت برند
+              «هربریس» و به‌دست جمعی از داروسازان پژوهشگر تأسیس شد.
+            </p>
+
+            <div class="fd-hero-ctas mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href="about.html"
+                class="fd-cta fd-btn fd-btn-primary"
+                data-magnetic
+              >
+                <span data-i18n="hero.ctaPrimary">درباره ما</span>
+                <svg
+                  class="fd-arrow-shift fd-flip"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a
+                href="projects.html"
+                class="fd-cta fd-btn fd-btn-outline"
+                data-magnetic
+                ><span data-i18n="hero.ctaSecondary">پروژه‌های ما</span></a
+              >
+              <a href="contact.html" class="fd-cta fd-btn fd-btn-ghost"
+                ><span data-i18n="hero.ctaGhost">تماس با ما</span></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating glass stats -->
+        <div
+          class="relative z-10 mx-auto w-full max-w-7xl px-4 pb-24 sm:px-6 lg:px-8 lg:pb-28"
+          data-float
+        >
+          <ul
+            class="fd-hero-stats grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4"
+            role="list"
+          >
+            <li class="fd-glass fd-hero-stat rounded-2xl px-4 py-3.5 lg:px-5">
+              <span
+                class="block text-xl font-extrabold text-brand-700 lg:text-2xl"
+                dir="ltr"
+                data-i18n="hero.stat1v"
+                >+۵۰</span
+              >
+              <span
+                class="mt-1 block text-xs text-slate-500 lg:text-sm"
+                data-i18n="hero.stat1l"
+                >محصول دارویی</span
+              >
+            </li>
+            <li class="fd-glass fd-hero-stat rounded-2xl px-4 py-3.5 lg:px-5">
+              <span
+                class="block text-xl font-extrabold text-brand-700 lg:text-2xl"
+                dir="ltr"
+                data-i18n="hero.stat2v"
+                >+۸۰</span
+              >
+              <span
+                class="mt-1 block text-xs text-slate-500 lg:text-sm"
+                data-i18n="hero.stat2l"
+                >نیروی متخصص</span
+              >
+            </li>
+            <li class="fd-glass fd-hero-stat rounded-2xl px-4 py-3.5 lg:px-5">
+              <span
+                class="block text-xl font-extrabold text-brand-700 lg:text-2xl"
+                dir="ltr"
+                data-i18n="hero.stat3v"
+                >۶</span
+              >
+              <span
+                class="mt-1 block text-xs text-slate-500 lg:text-sm"
+                data-i18n="hero.stat3l"
+                >شرکت زیرمجموعه</span
+              >
+            </li>
+            <li class="fd-glass fd-hero-stat rounded-2xl px-4 py-3.5 lg:px-5">
+              <span
+                class="block text-xl font-extrabold text-brand-700 lg:text-2xl"
+                dir="ltr"
+                data-i18n="hero.stat4v"
+                >۱۳۹۷</span
+              >
+              <span
+                class="mt-1 block text-xs text-slate-500 lg:text-sm"
+                data-i18n="hero.stat4l"
+                >سال تأسیس</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <button
+          type="button"
+          id="fd-scroll-cue"
+          class="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 sm:flex"
+          data-i18n-aria="a11y.scroll"
+          aria-label="اسکرول برای مشاهده"
+        >
+          <span class="fd-cue-track"><span class="fd-cue-dot"></span></span>
+        </button>
+      </section>
+
+      <!-- ================= BRAND VALUES ================= -->
+      <section class="fd-section bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <header class="max-w-2xl" data-reveal>
+            <span class="fd-rule" aria-hidden="true"></span>
+            <h2 class="fd-h2" data-i18n="values.title">ارزش‌های برند</h2>
+            <p class="mt-3 text-lg text-slate-500" data-i18n="values.subtitle">
+              ماموریت و ارزش‌های محوری شرکت داروسازی فضل دارو
+            </p>
+          </header>
+
+          <div
+            class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+            data-reveal-group
+          >
+            <!-- Value cards: static content, translated via data-i18n -->
+            <article
+              class="fd-value group rounded-2xl border border-brand-100 bg-white p-6"
+            >
+              <div class="flex items-start justify-between">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700"
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    /></svg
+                ></span>
+                <span
+                  class="text-xs font-bold tracking-widest text-brand-300"
+                  dir="ltr"
+                  ><span class="only-fa">۰۱</span
+                  ><span class="only-en">01</span></span
+                >
+              </div>
+              <h3
+                class="fd-value-title mt-5 font-bold text-brand-900"
+                data-i18n="values.t1"
+              >
+                حفظ و بهبود سلامت عمومی
+              </h3>
+              <p
+                class="mt-2.5 text-sm leading-7 text-slate-500"
+                data-i18n="values.d1"
+              >
+                از طریق تولید محصولات استاندارد و باکیفیت
+              </p>
+            </article>
+
+            <article
+              class="fd-value group rounded-2xl border border-brand-100 bg-white p-6"
+            >
+              <div class="flex items-start justify-between">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-xl bg-mint-light text-mint-dark"
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 3h6M10 3v6l-5.5 9A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-3L14 9V3"
+                    />
+                    <circle cx="10.5" cy="15.5" r="1" />
+                    <circle cx="13.5" cy="18" r="1" /></svg
+                ></span>
+                <span
+                  class="text-xs font-bold tracking-widest text-brand-300"
+                  dir="ltr"
+                  ><span class="only-fa">۰۲</span
+                  ><span class="only-en">02</span></span
+                >
+              </div>
+              <h3
+                class="fd-value-title mt-5 font-bold text-brand-900"
+                data-i18n="values.t2"
+              >
+                نوآوری در تولید
+              </h3>
+              <p
+                class="mt-2.5 text-sm leading-7 text-slate-500"
+                data-i18n="values.d2"
+              >
+                ایجاد سبد دارویی متناسب با نیاز بازارهای داخلی و بین‌المللی
+              </p>
+            </article>
+
+            <article
+              class="fd-value group rounded-2xl border border-brand-100 bg-white p-6"
+            >
+              <div class="flex items-start justify-between">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700"
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M23 6l-9.5 9.5-5-5L1 18" />
+                    <path d="M17 6h6v6" /></svg
+                ></span>
+                <span
+                  class="text-xs font-bold tracking-widest text-brand-300"
+                  dir="ltr"
+                  ><span class="only-fa">۰۳</span
+                  ><span class="only-en">03</span></span
+                >
+              </div>
+              <h3
+                class="fd-value-title mt-5 font-bold text-brand-900"
+                data-i18n="values.t3"
+              >
+                افزایش مستمر کیفیت
+              </h3>
+              <p
+                class="mt-2.5 text-sm leading-7 text-slate-500"
+                data-i18n="values.d3"
+              >
+                با همراهی واحد تحقیق و توسعه پویا و توانمند
+              </p>
+            </article>
+
+            <article
+              class="fd-value group rounded-2xl border border-brand-100 bg-white p-6"
+            >
+              <div class="flex items-start justify-between">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-xl bg-mint-light text-mint-dark"
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
+                    />
+                    <path
+                      d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"
+                    /></svg
+                ></span>
+                <span
+                  class="text-xs font-bold tracking-widest text-brand-300"
+                  dir="ltr"
+                  ><span class="only-fa">۰۴</span
+                  ><span class="only-en">04</span></span
+                >
+              </div>
+              <h3
+                class="fd-value-title mt-5 font-bold text-brand-900"
+                data-i18n="values.t4"
+              >
+                ارزش‌افزوده گیاهان دارویی
+              </h3>
+              <p
+                class="mt-2.5 text-sm leading-7 text-slate-500"
+                data-i18n="values.d4"
+              >
+                ایجاد حداکثر ارزش‌افزوده برای گیاهان دارویی کشور و فرآورده‌های
+                گیاهی
+              </p>
+            </article>
+
+            <article
+              class="fd-value group rounded-2xl border border-brand-100 bg-white p-6"
+            >
+              <div class="flex items-start justify-between">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700"
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path
+                      d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"
+                    /></svg
+                ></span>
+                <span
+                  class="text-xs font-bold tracking-widest text-brand-300"
+                  dir="ltr"
+                  ><span class="only-fa">۰۵</span
+                  ><span class="only-en">05</span></span
+                >
+              </div>
+              <h3
+                class="fd-value-title mt-5 font-bold text-brand-900"
+                data-i18n="values.t5"
+              >
+                محیط کاری مناسب
+              </h3>
+              <p
+                class="mt-2.5 text-sm leading-7 text-slate-500"
+                data-i18n="values.d5"
+              >
+                ایجاد محیط مناسب کاری و کسب و ارتقای رضایت کارکنان
+              </p>
+            </article>
+
+            <article
+              class="fd-value group rounded-2xl border border-brand-100 bg-white p-6"
+            >
+              <div class="flex items-start justify-between">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-xl bg-amber2-light text-amber-600"
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 11.5 2 2 4-4" /></svg
+                ></span>
+                <span
+                  class="text-xs font-bold tracking-widest text-brand-300"
+                  dir="ltr"
+                  ><span class="only-fa">۰۶</span
+                  ><span class="only-en">06</span></span
+                >
+              </div>
+              <h3
+                class="fd-value-title mt-5 font-bold text-brand-900"
+                data-i18n="values.t6"
+              >
+                مسئولیت‌پذیری اجتماعی
+              </h3>
+              <p
+                class="mt-2.5 text-sm leading-7 text-slate-500"
+                data-i18n="values.d6"
+              >
+                صداقت، امانت، درستکاری و مسئولیت‌پذیری در قبال ذی‌نفعان و
+                محیط‌زیست
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SUBSIDIARIES (holding ecosystem) ================= -->
+      <section class="fd-section bg-surface">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <header class="max-w-2xl" data-reveal>
+            <span class="fd-rule" aria-hidden="true"></span>
+            <h2 class="fd-h2" data-i18n="subs.title">
+              شرکت‌های زیرمجموعه فضل دارو
+            </h2>
+            <p class="mt-3 text-lg text-slate-500" data-i18n="subs.subtitle">
+              گروه فضل دارو با چند شرکت تخصصی در خدمت سلامت جامعه است.
+            </p>
+          </header>
+
+          <!-- Desktop: hub & spoke diagram + detail card (nodes injected by home.js) -->
+          <div
+            class="mt-12 hidden items-center gap-12 lg:grid lg:grid-cols-12"
+            data-reveal
+          >
+            <div class="lg:col-span-7">
+              <div
+                id="fd-hub"
+                class="relative mx-auto aspect-square max-w-[520px]"
+                role="group"
+                data-i18n-aria="subs.hubAria"
+                aria-label="نمودار شرکت‌های زیرمجموعه فضل دارو"
+              >
+                <svg
+                  class="absolute inset-0 h-full w-full"
+                  viewBox="0 0 600 600"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <g id="fd-hub-lines" stroke-linecap="round"></g>
+                </svg>
+                <div
+                  id="fd-hub-center"
+                  class="fd-glass absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full"
+                >
+                  <span
+                    class="fd-hub-ring absolute inset-0 rounded-full"
+                    aria-hidden="true"
+                  ></span>
+                  <svg class="h-12 w-12 text-brand-700" aria-hidden="true">
+                    <use href="#fd-mark"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <div
+                id="fd-hub-detail"
+                class="rounded-3xl border border-brand-100 bg-white p-7 shadow-card"
+              >
+                <div class="flex items-center gap-4">
+                  <span
+                    id="fd-hd-mono"
+                    class="fd-sub-mono fd-tint-blue flex h-14 w-14 items-center justify-center rounded-2xl text-xl font-extrabold"
+                    >H</span
+                  >
+                  <div>
+                    <h3
+                      id="fd-hd-name"
+                      class="text-xl font-extrabold text-brand-900"
+                    ></h3>
+                    <p
+                      id="fd-hd-latin"
+                      class="mt-0.5 text-xs font-medium uppercase tracking-[0.18em] text-brand-300"
+                      dir="ltr"
+                    ></p>
+                  </div>
+                </div>
+                <p id="fd-hd-desc" class="mt-5 leading-8 text-slate-500"></p>
+                <div class="mt-7 flex items-center justify-between gap-3">
+                  <a
+                    id="fd-hd-link"
+                    href="#"
+                    class="fd-btn fd-btn-outline"
+                    data-url="#"
+                  >
+                    <span data-i18n="subs.visit">مشاهده وب‌سایت</span>
+                    <svg
+                      class="fd-flip"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                  <span
+                    id="fd-hd-soon"
+                    class="text-xs font-semibold text-slate-400"
+                    data-i18n="subs.soon"
+                    >به‌زودی</span
+                  >
+                </div>
+              </div>
+              <p
+                class="mt-4 text-xs leading-6 text-slate-400"
+                data-i18n="subs.hint"
+              >
+                برای مشاهده جزئیات، نشانگر را روی هر شرکت نگه دارید یا آن را
+                انتخاب کنید.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mobile: snap carousel (cards injected by home.js) -->
+          <div
+            id="fd-subs-rail"
+            class="mt-10 -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 lg:hidden"
+            role="list"
+          ></div>
+          <div
+            id="fd-subs-dots"
+            class="mt-3 flex justify-center gap-2 lg:hidden"
+            role="tablist"
+            aria-label="subsidiaries"
+          ></div>
+        </div>
+      </section>
+
+      <!-- ================= CAREERS BAND ================= -->
+      <section class="fd-band fd-molecule-bg relative overflow-hidden">
+        <div
+          class="mx-auto flex max-w-7xl flex-col items-start gap-8 px-4 py-14 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:py-16 lg:px-8"
+          data-reveal
+        >
+          <div class="max-w-2xl">
+            <h2 class="fd-h2 text-brand-900" data-i18n="careers.title">
+              فضل دارو، فرصتی برای بهترین‌ها
+            </h2>
+            <p class="mt-4 leading-8 text-slate-600" data-i18n="careers.text">
+              جهت همکاری با شرکت داروسازی دانش‌بنیان فضل دارو در هر یک از
+              زیرمجموعه‌های فوق، رزومه خود را برای ما ارسال کنید.
+            </p>
+          </div>
+          <div class="flex shrink-0 flex-col gap-3 sm:flex-row">
+            <a
+              class="fd-btn fd-btn-primary"
+              data-i18n-href="careers.href"
+              href="mailto:info@phazldaru.ir?subject=%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%B1%D8%B2%D9%88%D9%85%D9%87%20%D9%81%D8%B6%D9%84%20%D8%AF%D8%A7%D8%B1%D9%88"
+            >
+              <svg
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12l-4-4H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+              </svg>
+              <span data-i18n="careers.cta">ارسال رزومه</span>
+            </a>
+            <a
+              href="contact.html"
+              class="fd-btn fd-btn-outline"
+              data-i18n="careers.cta2"
+              >صفحه تماس</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= VIDEOS ================= -->
+      <section class="fd-section bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <header class="max-w-2xl" data-reveal>
+            <span class="fd-rule" aria-hidden="true"></span>
+            <h2 class="fd-h2" data-i18n="videos.title">ویدئوهای فضل دارو</h2>
+            <p class="mt-3 text-lg text-slate-500" data-i18n="videos.subtitle">
+              مروری بر فعالیت‌ها و شرکت‌های گروه فضل دارو
+            </p>
+          </header>
+          <!-- Featured video + thumbnail rail rendered by home.js (data-driven, replaceable) -->
+          <div class="mt-12 grid gap-8 lg:grid-cols-12">
+            <div class="lg:col-span-8" id="fd-video-featured" data-reveal></div>
+            <ul
+              id="fd-video-rail"
+              class="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 lg:col-span-4 lg:-mx-0 lg:mx-0 lg:flex-col lg:gap-3 lg:overflow-visible lg:px-0"
+              role="list"
+              data-reveal
+              data-reveal-delay="0.15"
+            ></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= NEWS ================= -->
+      <section class="fd-section bg-surface">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <header
+            class="flex flex-wrap items-end justify-between gap-4"
+            data-reveal
+          >
+            <div class="max-w-2xl">
+              <span class="fd-rule" aria-hidden="true"></span>
+              <h2 class="fd-h2" data-i18n="news.title">اخبار</h2>
+              <p class="mt-3 text-lg text-slate-500" data-i18n="news.subtitle">
+                تازه‌ترین اخبار و دستاوردهای شرکت فضل دارو
+              </p>
+            </div>
+            <!-- PLACEHOLDER: link to the future news archive -->
+            <a
+              href="#"
+              class="fd-btn fd-btn-ghost group"
+              data-i18n="news.viewAll"
+              >مشاهده همه اخبار</a
+            >
+          </header>
+
+          <!-- PLACEHOLDER news cards: replace summaries/dates with real items later -->
+          <div class="mt-12 grid gap-6 md:grid-cols-3" data-reveal-group>
+            <a
+              href="#"
+              class="fd-news-card group flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white"
+              data-i18n-aria="news.readAria"
+              aria-label="مطالعه کامل خبر"
+            >
+              <div
+                class="fd-news-media fd-poster-light relative h-44 overflow-hidden"
+              >
+                <div
+                  class="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+                  aria-hidden="true"
+                ></div>
+                <svg
+                  class="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 text-brand-700/30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="4" width="18" height="16" rx="3" />
+                  <path d="M6 8h7M6 12h10M6 16h5" />
+                </svg>
+                <span
+                  class="fd-tag absolute start-3 top-3"
+                  data-i18n="news.tag1"
+                  >تازه‌ها</span
+                >
+              </div>
+              <div class="flex flex-1 flex-col p-5">
+                <h3
+                  class="font-bold leading-8 text-brand-900"
+                  data-i18n="news.t1"
+                >
+                  رونمایی از داروی جدید دیابت
+                </h3>
+                <p
+                  class="mt-2 text-sm leading-7 text-slate-500"
+                  data-i18n="news.d1"
+                >
+                  شرکت فضل دارو از داروی جدید خود برای درمان دیابت نوع ۲ رونمایی
+                  کرد.
+                </p>
+                <div class="mt-auto flex items-center justify-between pt-4">
+                  <time
+                    class="text-xs font-medium text-slate-400"
+                    data-i18n="news.date1"
+                    >۲ روز پیش</time
+                  >
+                  <span
+                    class="fd-arrow-slide inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600"
+                    aria-hidden="true"
+                    ><svg
+                      class="fd-flip h-4 w-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" /></svg
+                  ></span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              class="fd-news-card group flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white"
+              data-i18n-aria="news.readAria"
+              aria-label="مطالعه کامل خبر"
+            >
+              <div
+                class="fd-news-media fd-poster-light fd-poster-alt2 relative h-44 overflow-hidden"
+              >
+                <div
+                  class="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+                  aria-hidden="true"
+                ></div>
+                <svg
+                  class="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 text-mint-dark/40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.5 13 17 22l-5-3-5 3 1.5-9" />
+                </svg>
+                <span
+                  class="fd-tag fd-tag-mint absolute start-3 top-3"
+                  data-i18n="news.tag2"
+                  >دستاورد</span
+                >
+              </div>
+              <div class="flex flex-1 flex-col p-5">
+                <h3
+                  class="font-bold leading-8 text-brand-900"
+                  data-i18n="news.t2"
+                >
+                  دریافت گواهی ISO 9001:2022
+                </h3>
+                <p
+                  class="mt-2 text-sm leading-7 text-slate-500"
+                  data-i18n="news.d2"
+                >
+                  شرکت فضل دارو موفق به دریافت گواهی بین‌المللی ISO 9001:2022
+                  شد.
+                </p>
+                <div class="mt-auto flex items-center justify-between pt-4">
+                  <time
+                    class="text-xs font-medium text-slate-400"
+                    data-i18n="news.date2"
+                    >۱ هفته پیش</time
+                  >
+                  <span
+                    class="fd-arrow-slide inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600"
+                    aria-hidden="true"
+                    ><svg
+                      class="fd-flip h-4 w-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" /></svg
+                  ></span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              class="fd-news-card group flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white"
+              data-i18n-aria="news.readAria"
+              aria-label="مطالعه کامل خبر"
+            >
+              <div
+                class="fd-news-media fd-poster-light fd-poster-alt3 relative h-44 overflow-hidden"
+              >
+                <div
+                  class="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+                  aria-hidden="true"
+                ></div>
+                <svg
+                  class="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 text-brand-700/30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3 2 8l10 5 10-5-10-5z" />
+                  <path d="M6 10.5V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5" />
+                </svg>
+                <span
+                  class="fd-tag absolute start-3 top-3"
+                  data-i18n="news.tag3"
+                  >همکاری</span
+                >
+              </div>
+              <div class="flex flex-1 flex-col p-5">
+                <h3
+                  class="font-bold leading-8 text-brand-900"
+                  data-i18n="news.t3"
+                >
+                  همکاری با دانشگاه تهران
+                </h3>
+                <p
+                  class="mt-2 text-sm leading-7 text-slate-500"
+                  data-i18n="news.d3"
+                >
+                  انعقاد قرارداد همکاری پژوهشی با دانشکده داروسازی دانشگاه
+                  تهران.
+                </p>
+                <div class="mt-auto flex items-center justify-between pt-4">
+                  <time
+                    class="text-xs font-medium text-slate-400"
+                    data-i18n="news.date3"
+                    >۲ هفته پیش</time
+                  >
+                  <span
+                    class="fd-arrow-slide inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600"
+                    aria-hidden="true"
+                    ><svg
+                      class="fd-flip h-4 w-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" /></svg
+                  ></span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CLOSING BRAND STATEMENT (scroll-scrub word reveal) ================= -->
+      <section class="fd-section bg-white">
+        <div class="mx-auto max-w-3xl px-4 text-center sm:px-6" data-statement>
+          <span class="fd-rule mx-auto" aria-hidden="true"></span>
+          <p
+            class="fd-statement mt-8 text-[clamp(1.25rem,1rem+1.4vw,2rem)] font-bold leading-[2] text-brand-900"
+            data-statement-text
+            data-i18n="statement.text"
+          >
+            شرکت داروسازی دانش‌بنیان فضل دارو تحت برند «هربریس» در سال ۱۳۹۷ توسط
+            جمعی از داروسازان پژوهشگر با هدف تولید فرآورده‌های دارویی مورد نیاز
+            کشور تأسیس گردید.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER (identical across pages) ================= -->
+    <div class="bg-white" aria-hidden="true">
+      <svg
+        class="block h-10 w-full lg:h-14"
+        viewBox="0 0 1440 56"
+        preserveAspectRatio="none"
+        fill="none"
+      >
+        <path
+          d="M0 0h1440v8c-240 36-480-2-720 20s-480-14-720 16V0z"
+          fill="#0A1F44"
+        />
+      </svg>
+    </div>
+    <footer class="bg-brand-900 text-blue-100/70">
+      <div class="mx-auto max-w-7xl px-4 pb-10 pt-14 sm:px-6 lg:px-8 lg:pt-20">
+        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-12">
+          <div class="lg:col-span-5">
+            <a
+              href="index.html"
+              class="inline-flex items-center gap-3"
+              data-i18n-aria="brand.logoAria"
+              aria-label="فضل دارو — صفحه اصلی"
+            >
+              <svg class="h-10 w-10 text-white" aria-hidden="true">
+                <use href="#fd-mark"></use>
+              </svg>
+              <span class="flex flex-col leading-tight">
+                <span
+                  class="text-lg font-extrabold text-white"
+                  data-i18n="brand.name"
+                  >فضل دارو</span
+                >
+                <span
+                  class="text-[10px] font-medium uppercase tracking-[0.22em] text-blue-200/60"
+                  data-i18n="brand.tag"
+                  >هلدینگ داروسازی</span
+                >
+              </span>
+            </a>
+            <p class="mt-5 max-w-sm text-sm leading-7" data-i18n="footer.desc">
+              شرکت داروسازی دانش‌بنیان فضل دارو در سال ۱۳۹۷ تحت برند «هربریس» و
+              به‌دست جمعی از داروسازان پژوهشگر تأسیس شد.
+            </p>
+            <!-- PLACEHOLDER social links -->
+            <div class="mt-6 flex items-center gap-2">
+              <span
+                class="me-2 text-xs font-semibold uppercase tracking-wider text-blue-200/50"
+                data-i18n="footer.follow"
+                >ما را دنبال کنید</span
+              >
+              <a
+                href="#"
+                class="fd-social"
+                data-i18n-aria="footer.social1"
+                aria-label="لینکدین"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
+                  /></svg
+              ></a>
+              <a
+                href="#"
+                class="fd-social"
+                data-i18n-aria="footer.social2"
+                aria-label="اینستاگرام"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+                  <circle cx="12" cy="12" r="4.5" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1.3"
+                    fill="currentColor"
+                    stroke="none"
+                  /></svg
+              ></a>
+              <a
+                href="#"
+                class="fd-social"
+                data-i18n-aria="footer.social3"
+                aria-label="تلگرام"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M22 2 11 13" />
+                  <path d="M22 2 15 22l-4-9-9-4 20-7z" /></svg
+              ></a>
+              <a
+                href="#"
+                class="fd-social"
+                data-i18n-aria="footer.social4"
+                aria-label="یوتیوب"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="5" width="20" height="14" rx="4" />
+                  <path
+                    d="M10 9.5v5l4.5-2.5L10 9.5z"
+                    fill="currentColor"
+                    stroke="none"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+          <nav
+            class="lg:col-span-3"
+            data-i18n-aria="footer.links"
+            aria-label="دسترسی سریع"
+          >
+            <p class="text-sm font-bold text-white" data-i18n="footer.links">
+              دسترسی سریع
+            </p>
+            <ul class="mt-4 space-y-2.5 text-sm" role="list">
+              <li>
+                <a class="fd-foot-link" href="index.html" data-i18n="nav.home"
+                  >خانه</a
+                >
+              </li>
+              <li>
+                <a
+                  class="fd-foot-link"
+                  href="projects.html"
+                  data-i18n="nav.projects"
+                  >پروژه‌ها</a
+                >
+              </li>
+              <li>
+                <a class="fd-foot-link" href="about.html" data-i18n="nav.about"
+                  >درباره ما</a
+                >
+              </li>
+              <li>
+                <a
+                  class="fd-foot-link"
+                  href="contact.html"
+                  data-i18n="nav.contact"
+                  >تماس با ما</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="lg:col-span-4">
+            <p class="text-sm font-bold text-white" data-i18n="footer.contact">
+              راه‌های ارتباطی
+            </p>
+            <ul class="mt-4 space-y-4 text-sm" role="list">
+              <li class="flex gap-3">
+                <svg
+                  class="mt-0.5 h-4 w-4 shrink-0 text-brand-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span
+                  ><span
+                    class="block text-xs text-blue-200/50"
+                    data-i18n="footer.addr1Tag"
+                    >نیشابور</span
+                  ><span class="mt-0.5 block leading-6" data-i18n="footer.addr1"
+                    >نیشابور، انتهای بلوار پژوهش، پارک علم و فناوری</span
+                  ></span
+                >
+              </li>
+              <li class="flex gap-3">
+                <svg
+                  class="mt-0.5 h-4 w-4 shrink-0 text-brand-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span
+                  ><span
+                    class="block text-xs text-blue-200/50"
+                    data-i18n="footer.addr2Tag"
+                    >مشهد</span
+                  ><span class="mt-0.5 block leading-6" data-i18n="footer.addr2"
+                    >مشهد، میدان فردوسی، پارک علم و فناوری سلامت</span
+                  ></span
+                >
+              </li>
+              <li class="flex gap-3">
+                <svg
+                  class="mt-0.5 h-4 w-4 shrink-0 text-brand-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                <span class="flex flex-col gap-1"
+                  ><a
+                    href="tel:+985142234242"
+                    class="fd-foot-link"
+                    dir="ltr"
+                    data-i18n="footer.phone1"
+                    >۰۵۱-۴۲۲۳۴۲۴۲</a
+                  ><a
+                    href="tel:+985142637081"
+                    class="fd-foot-link"
+                    dir="ltr"
+                    data-i18n="footer.phone2"
+                    >۰۵۱-۴۲۶۳۷۰۸۱-۸۴</a
+                  ></span
+                >
+              </li>
+              <li class="flex gap-3">
+                <svg
+                  class="mt-0.5 h-4 w-4 shrink-0 text-brand-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="3" />
+                  <path d="m3 6 9 7 9-7" />
+                </svg>
+                <span
+                  ><span
+                    class="block text-xs text-blue-200/50"
+                    data-i18n="footer.emailLabel"
+                    >ایمیل</span
+                  ><a
+                    href="mailto:info@phazldaru.ir"
+                    class="fd-foot-link"
+                    dir="ltr"
+                    >info@phazldaru.ir</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-blue-100/55 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <p>
+            © <span id="fd-year" dir="ltr">۲۰۲۵</span>
+            <span data-i18n="footer.rights"
+              >تمامی حقوق برای شرکت داروسازی فضل دارو محفوظ است.</span
+            >
+          </p>
+          <p data-i18n="footer.credit">
+            طراحی و توسعه توسط تیم فناوری اطلاعات فضل دارو
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile sticky action dock (call + language) -->
+    <div id="fd-dock" class="fd-dock lg:hidden">
+      <div class="fd-dock-inner">
+        <a
+          href="tel:+985142234242"
+          class="fd-dock-btn"
+          data-i18n-aria="dock.call"
+          aria-label="تماس"
+        >
+          <svg
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+            />
+          </svg>
+          <span class="fd-dock-label" data-i18n="dock.call">تماس</span>
+        </a>
+        <a
+          href="mailto:info@phazldaru.ir"
+          class="fd-dock-btn"
+          data-i18n-aria="dock.email"
+          aria-label="ایمیل"
+        >
+          <svg
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="2" y="4" width="20" height="16" rx="3" />
+            <path d="m3 6 9 7 9-7" />
+          </svg>
+          <span class="fd-dock-label" data-i18n="dock.email">ایمیل</span>
+        </a>
+        <button
+          type="button"
+          class="fd-dock-btn fd-lang-btn"
+          data-i18n-aria="a11y.langAria"
+          aria-label="تغییر زبان"
+        >
+          فا
+        </button>
+      </div>
+    </div>
+
+    <!-- Page transition veil -->
+    <div id="fd-transition" aria-hidden="true">
+      <svg class="h-12 w-12 text-brand-700"><use href="#fd-mark"></use></svg>
+    </div>
+
+    <!-- Video lightbox (player injected on demand) -->
+    <div
+      id="fd-video-modal"
+      class="fd-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="fd-vm-title"
+      hidden
+    >
+      <div class="fd-modal-backdrop" data-close></div>
+      <div class="fd-modal-panel">
+        <div class="fd-modal-head" id="fd-vm-head">
+          <div class="min-w-0 flex-1">
+            <h3
+              id="fd-vm-title"
+              class="truncate text-base font-bold text-white"
+            ></h3>
+            <p
+              id="fd-vm-desc"
+              class="mt-1 line-clamp-2 text-sm text-blue-100/70"
+            ></p>
+          </div>
+          <button
+            type="button"
+            class="fd-modal-close"
+            data-close
+            data-i18n-aria="videos.close"
+            aria-label="بستن"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div
+          id="fd-vm-player"
+          class="aspect-video overflow-hidden rounded-2xl bg-black/40"
+        ></div>
+        <div
+          class="mt-3 flex flex-wrap items-center gap-2"
+          id="fd-vm-chips"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/hero-3d.js"></script>
+    <script src="assets/js/home.js"></script>
+    <script src="assets/js/animations.js"></script>
+  </body>
+</html>

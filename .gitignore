@@ -1,0 +1,54 @@
+# ============================================================
+#  Fazl Daru Pharmaceutical Holding — .gitignore
+# ============================================================
+
+# ---------- Node.js ----------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm
+.pnp.*
+package-lock.json    # keep if you prefer lockfiles in git; delete this line to track it
+
+# ---------- Build output ----------
+# Tailwind CLI generates this from assets/css/input.css via `npm run dev`.
+# Comment this line out if you deploy the site without a build step.
+assets/css/output.css
+
+# ---------- OS / editor junk ----------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ---------- Editors ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.history/
+
+# ---------- Env & secrets ----------
+.env
+.env.*
+!.env.example
+
+# ---------- Caches ----------
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+*.log
+
+# ---------- Deploy / platform dotfiles ----------
+.netlify/
+.vercel/
+.firebase/
