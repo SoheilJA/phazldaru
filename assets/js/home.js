@@ -125,10 +125,13 @@
         }
     ];
 
-    /* ریز-پچ CSS: رنگ مونوگرام گره‌ها از متغیر tint ها خوانده شود */
+    /* ریز-پچ CSS: رنگ مونوگرام گره‌ها از متغیر tint ها خوانده شود.
+       فقط یک متغیر (--node-fg) تعریف می‌کنیم و خود استایل‌ها را در
+       input.css می‌نویسیم تا قانونِ لایه‌نشده، حالت‌های hover/active
+       را در کاسکید شکست ندهد. */
     (function injectTintStyle() {
         var s = document.createElement('style');
-        s.textContent = '.fd-node-circle{color:var(--fd-fg,#0B4EA2)}';
+        s.textContent = '.fd-node-circle{--node-fg:var(--fd-fg,#0B4EA2)}';
         document.head.appendChild(s);
     })();
 

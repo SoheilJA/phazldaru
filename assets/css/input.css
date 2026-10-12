@@ -634,7 +634,7 @@
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid #ddebfd;
-    color: var(--fd-deep);
+    color: var(--node-fg, var(--fd-deep));
     font-size: 1.2rem;
     font-weight: 800;
     -webkit-backdrop-filter: blur(8px);
@@ -650,12 +650,12 @@
   .fd-hub-node:hover .fd-node-circle,
   .fd-hub-node:focus-visible .fd-node-circle,
   .fd-hub-node.is-active .fd-node-circle {
-    border-color: var(--fd-primary);
+    background: var(--node-fg, var(--fd-primary));
+    border-color: var(--node-fg, var(--fd-primary));
+    color: #fff;
     box-shadow: 0 10px 26px rgba(18, 99, 214, 0.2);
   }
   .fd-hub-node.is-active .fd-node-circle {
-    background: var(--fd-primary);
-    color: #fff;
     transform: scale(1.08);
   }
   .fd-hub-node.is-active .fd-node-name {
