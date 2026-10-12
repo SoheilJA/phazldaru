@@ -12,11 +12,6 @@ pnpm-debug.log*
 .pnp.*
 package-lock.json    # keep if you prefer lockfiles in git; delete this line to track it
 
-# ---------- Build output ----------
-# Tailwind CLI generates this from assets/css/input.css via `npm run dev`.
-# Comment this line out if you deploy the site without a build step.
-assets/css/output.css
-
 # ---------- Internal ----------
 AGENT-PROGRESS.md
 
