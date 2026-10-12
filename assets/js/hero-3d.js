@@ -1,7 +1,7 @@
 /* ============================================================
    assets/js/hero-3d.js — صحنه‌ی ذره‌ای مارپیچ DNA با Three.js
    روی <canvas data-fd-hero3d> به‌طور خودکار مقداردهی می‌شود.
-   اتریبیوت‌ها: data-density (۰ تا ۱) · data-speed · data-hexagons (0|1)
+   اتریبیوت‌ها: data-density (۰ تا ۱) · data-speed · data-hexagons (0|1) · data-scale
    - توقف خودکار: IntersectionObserver + visibilitychange
    - prefers-reduced-motion: فقط یک فریم ثابت رندر می‌شود
    - جای‌گذاری سمت «end» با جهت صفحه هم‌جهت می‌شود (میرور در تغییر زبان)
@@ -37,6 +37,7 @@ window.FDHero3D = (function () {
     var density = parseFloat(opts.density || 1);
     var speed = parseFloat(opts.speed || 1);
     var withHex = opts.hexagons !== false;
+    var scale = parseFloat(opts.scale || 1);
 
     var isMobile = window.matchMedia('(max-width: 768px)').matches;
     var renderer;
@@ -172,7 +173,7 @@ window.FDHero3D = (function () {
       camera.updateProjectionMatrix();
       group.position.x = sideOffset();
       group.position.y = isMobile ? 0 : -0.5;
-      group.scale.setScalar(isMobile ? 0.82 : 1);
+      group.scale.setScalar((isMobile ? 0.82 : 1) * scale);
     }
     layout();
 
@@ -286,6 +287,7 @@ window.FDHero3D = (function () {
       init(canvas, {
         density: canvas.dataset.density ? parseFloat(canvas.dataset.density) : 1,
         speed: canvas.dataset.speed ? parseFloat(canvas.dataset.speed) : 1,
+        scale: canvas.dataset.scale ? parseFloat(canvas.dataset.scale) : 1,
         hexagons: canvas.dataset.hexagons !== '0'
       });
     });
