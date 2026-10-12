@@ -17,6 +17,9 @@ package-lock.json    # keep if you prefer lockfiles in git; delete this line to 
 # Comment this line out if you deploy the site without a build step.
 assets/css/output.css
 
+# ---------- Internal ----------
+AGENT-PROGRESS.md
+
 # ---------- OS / editor junk ----------
 .DS_Store
 .DS_Store?
